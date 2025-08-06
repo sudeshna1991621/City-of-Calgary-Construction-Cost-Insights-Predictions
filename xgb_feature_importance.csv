@@ -1,0 +1,82 @@
+Feature,Importance
+PermitType_Single Construction Permit,0.80219984
+PermitType_Residential Improvement Project,0.058869407
+HousingUnits,0.042194925
+PermitClass_Top_1104 - Deck,0.025877679
+PermitClass_Top_1101 - Basement Development,0.0074247955
+PermitClassGroup_Single Family,0.0069513298
+PermitClassGroup_Special Function Ten,0.0054615946
+PermitType_Commercial / Multi Family Project,0.0048771487
+PermitClass_Top_1101 - Improvements (Single Family),0.004418284
+PermitClass_Top_1301 - Private Detached Garage,0.004173969
+PermitClass_Top_Other,0.002626121
+PermitClass_Top_1106 - Addition,0.0023763196
+ApprovalDuration,0.0022211745
+SqFtPerUnit,0.0020638483
+WorkClassMapped_Unspecified,0.0020453108
+PermitClassGroup_Additional Dwelling,0.0017439813
+WorkClass_Alteration,0.0015332295
+PermitClass_Top_1110 - Below Grade Suite,0.0015301914
+AppliedYear,0.0015168337
+PermitClass_Top_3402 - Office,0.0014630749
+WorkClass_Fire/ Security Alarm,0.0014418104
+WorkClassMapped_Existing,0.0010616521
+PermitClass_Top_1106 - Single Family House,0.0009628731
+PermitClassGroup_Unspecified,0.0009526032
+WorkClass_New,0.0007321322
+PermitClassGroup_Commercial,0.00070372183
+CompletionDuration,0.0006965248
+WorkClass_Repair,0.0006541877
+ContractorName_Top_Other,0.0005192697
+PermitClassGroup_Garage,0.00050104986
+CommunityName_Top_DOWNTOWN COMMERCIAL CORE,0.000498294
+LocationCount,0.00046865418
+PermitClass_Top_1407 - Two Family Semi-Detached (1 Unit),0.00045806722
+TotalSqFt,0.00043678688
+PermitClassGroup_Townhouse,0.00040047464
+WorkClassGroup_Improvement,0.0003889414
+WorkClass_Addition,0.00038735708
+WorkClassMapped_New,0.00038161752
+StatusCurrent_Top_Completed,0.00036207895
+CommunityName_Top_Other,0.00032968473
+PermitClassGroup_Institutional,0.00029068443
+CommunityName_Top_MAHOGANY,0.0002830343
+PermitClassGroup_Two Family,0.0002734749
+PermitClassGroup_Apartment,0.0002715428
+WorkClassGroup_New,0.00026918168
+PermitClassGroup_Swimming Pool,0.00024997393
+PermitClass_Top_3106 - Retail Shop,0.00023094432
+CommunityName_Top_PANORAMA HILLS,0.00022685828
+ContractorName_Top_HOMES BY AVI (CANADA),0.00022253732
+CommunityName_Top_COVENTRY HILLS,0.00021300875
+WorkClassGroup_Unspecified,0.00020872925
+PermitClassGroup_Industrial,0.0001946346
+PermitType_Environmental Restoration Permit,0.00019211901
+PermitClassGroup_Secondary Suites,0.00018375518
+CommunityName_Top_SADDLE RIDGE,0.0001830726
+PermitClassGroup_Government,0.00017968722
+CommunityName_Top_TUSCANY,0.00017627183
+PermitClassGroup_General,0.00017528821
+StatusCurrent_Top_File Closed,0.00016873894
+CommunityName_Top_EVERGREEN,0.00016775017
+CommunityName_Top_EVANSTON,0.00015757537
+CommunityName_Top_MCKENZIE TOWNE,0.00015746705
+PermitClassGroup_Retaining Wall,0.00014946489
+WorkClass_Temporary,0.0001449489
+CommunityName_Top_CRANSTON,0.00014472351
+ContractorName_Top_JAYMAN BUILT,0.00014261885
+StatusCurrent_Top_Expired,0.00013956266
+ContractorName_Top_STERLING HOMES,0.00012029859
+ContractorName_Top_TRICO HOMES,0.00011469913
+ContractorName_Top_EXCEL HOMES LIMITED PARTNERSHIP,0.00010975024
+ContractorName_Top_BROOKFIELD RESIDENTIAL (ALBERTA),9.848096e-05
+StatusCurrent_Top_Other,5.9363465e-05
+StatusCurrent_Top_Issued Permit,5.142931e-05
+ContractorName_Top_MORRISON HOMES (CALGARY),4.8019592e-05
+ContractorName_Top_SHANE HOMES,4.6180212e-05
+ContractorName_Top_CARDEL HOMES,3.326831e-05
+ContractorName_Top_CEDARGLEN GROUP (THE),1.3966104e-05
+WorkClass_Air Conditioning,0.0
+StatusCurrent_Top_Hold,0.0
+StatusCurrent_Top_In Review,0.0
+StatusCurrent_Top_Pre Backfill Phase,0.0
