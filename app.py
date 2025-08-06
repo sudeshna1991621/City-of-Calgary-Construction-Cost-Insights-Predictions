@@ -1,3 +1,5 @@
+import os
+import sys
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -53,51 +55,11 @@ from sklearn.exceptions import NotFittedError
 # Safe path resolution (same directory as app.py)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "xgb_model_pipeline.joblib")
 
-import os
-import sys
-import pandas as pd
-from sklearn.exceptions import NotFittedError
+
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "xgb_model_pipeline.joblib")
 
-try:
-    group_classifier = joblib.load(MODEL_PATH)
-
-    # Create a dummy DataFrame with correct columns
-    dummy_df = pd.DataFrame([{
-        'PermitType': 'dummy',
-        'PermitClass_Top': 'dummy',
-        'PermitClassGroup': 'dummy',
-        'WorkClass': 'dummy',
-        'WorkClassGroup': 'dummy',
-        'WorkClassMapped': 'dummy',
-        'StatusCurrent_Top': 'dummy',
-        'TotalSqFt': 0,
-        'HousingUnits': 0,
-        'SqFtPerUnit': 0,
-        'AppliedYear': 2000,
-        'ApprovalDuration': 0,
-        'CompletionDuration': 0,
-        'LocationCount': 0,
-        'CommunityName_Top': 'dummy',
-        'ContractorName_Top': 'dummy'
-    }])
-
-    try:
-        _ = group_classifier.predict(dummy_df)
-    except NotFittedError:
-        st.error("❌ The model was loaded but is not fitted. Please re-train and export the fitted model.")
-        sys.exit(1)
-
-except FileNotFoundError:
-    st.error("❌ Model file not found. Please ensure `xgb_model_pipeline.joblib` is in the app directory.")
-    sys.exit(1)
-except Exception as e:
-    st.error(f"❌ Error loading model: {e}")
-    sys.exit(1)
-
-
-
+group_classifier = joblib.load(MODEL_PATH)
 # ---------- FORM ----------
 with st.container():
     st.markdown("### 🔧 Permit Details Entry")
@@ -223,5 +185,6 @@ if st.button("🔮 Predict Project Cost"):
                 "Log Cost (XGB)": round(log_cost, 4),
                 "Estimated Cost": round(predicted_cost, 2)
             })
+
 
 
