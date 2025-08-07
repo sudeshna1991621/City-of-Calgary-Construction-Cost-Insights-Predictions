@@ -11,7 +11,7 @@ This project provides an end-to-end data analytics and machine learning solution
 - Applied several modeling techniques (XGBoost, LightGBM, CatBoost, Random Forest, and Stratified Modeling) to predict project costs.
 - Built an interactive Power BI dashboard and a deployed Streamlit application for end users.
 - `Calgary_Building_Permits_Structured.ipynb` – Full analysis and modeling workflow  
-  👉 [Download Notebook](https://drive.google.com/uc?export=download&id=1M5IdvBmQcyTRPlydp2t89Q75hRaEoJrS)
+  👉 [Download Notebook](https://github.com/sudeshna1991621/City-of-Calgary-Construction-Cost-Insights-Predictions/blob/main/Calgary_Building_Permits_Structured.ipynb)
 
 ------------------------------------------------------------------------
 
