@@ -1,93 +1,86 @@
-# City of Calgary – Project Cost Prediction & Trends Dashboard
+# 🏗️ City of Calgary -- Construction Cost Analysis & Prediction
 
-## **Purpose**
-A Power BI solution analyzing over a decade of building permit data for Calgary to deliver actionable insights 
-for executives, planners, and analysts. The report combines KPI tracking, community‑level analysis, and 
-machine learning–based project cost prediction.
+This project provides an end-to-end data analytics and machine learning solution using Calgary's building permit data. It involves data cleaning, exploratory analysis, outlier filtering, and predictive modeling to estimate project costs.
 
----
+------------------------------------------------------------------------
 
-## **Data Preparation**
-- Cleaned and transformed permit data in **Python** (Pandas) and Power BI.
-- Imputed missing values (e.g., *TotalSqFt*) using multiple statistical methods.
-- Created calculated columns and measures in **DAX** for KPIs, model evaluation, and data quality tracking.
-- Integrated **XGBoost regression model** for cost prediction, exporting results and feature importance back into Power BI.
+## 🔍 Project Highlights
 
----
+- Analyzed 20+ years of City of Calgary building permit data.
+- Identified key trends by community, work class, and building type.
+- Applied several modeling techniques (XGBoost, LightGBM, CatBoost, Random Forest, and Stratified Modeling) to predict project costs.
+- Built an interactive Power BI dashboard and a deployed Streamlit application for end users.
+- `Calgary_Building_Permits_Structured.ipynb` – Full analysis and modeling workflow  
+  👉 [Download Notebook](https://drive.google.com/uc?export=download&id=1M5IdvBmQcyTRPlydp2t89Q75hRaEoJrS)
 
-## **Key DAX Measures**
-```DAX
--- Total Estimated Cost
-TotalEstCost =
-SUM('BP_RAW'[EstimatedProjectCost])
+------------------------------------------------------------------------
 
--- Average Permit Cost
-AvgPermitCost =
-DIVIDE([TotalEstCost], COUNT('BP_RAW'[PermitNum]))
+## 📊 Power BI Dashboard
 
--- MostActiveCommunity
-MostActiveCommunity = 
-CALCULATE (
-    SELECTCOLUMNS (
-        TOPN (
-            1, 
-            VALUES('BP_RAW'[CommunityName]), 
-            CALCULATE(COUNT('BP_RAW'[PermitNum])), 
-            DESC
-        ), 
-        "Community", 'BP_RAW'[CommunityName]
-    )
-)
+Explore insightful visualizations of building trends, estimated costs, community-wise investments, and more:
 
+👉 [**View Power BI Dashboard**](https://mavenshowcase.com/project/41217)
 
--- R² Score for Model Performance
-R2_Score =
-VAR SST =
-    VAR MeanActual = AVERAGE('BP_FINAL'[EstProjectCost])
-    RETURN SUMX('BP_FINAL', ('BP_FINAL'[EstProjectCost] - MeanActual)^2)
-VAR SSR =
-    SUMX('BP_FINAL', ('BP_FINAL'[EstProjectCost] - 'BP_FINAL'[cost_xgb])^2)
-RETURN
-1 - DIVIDE(SSR, SST)
+------------------------------------------------------------------------
 
--- RMSE for Model Performance
-RMSE_XGB =
-VAR MSE =
-    AVERAGEX(
-        'BP_FINAL',
-        ('BP_FINAL'[EstProjectCost] - 'BP_FINAL'[cost_xgb]) ^ 2
-    )
-RETURN
-SQRT(MSE)
-```
+## 🌐 Streamlit App
 
----
+Interact with the ML-based project cost estimator and explore Calgary's construction metrics live:
 
-## **Report Pages**
-1. **Overview Dashboard** – KPI cards (*Total Permits, Total Estimated Cost, Average Permit Cost, Most Active Community*), yearly trends, permit type distribution, and slicers.
-2. **Community Insights** – Map by community, top 10 communities by permit count and cost, and community‑level summary tables.
-3. **Predictive Insights** – Missing Values bar chart, Feature Importance bar chart, and Error Distribution histogram.
+👉 [**Try the Streamlit App**](https://city-of-calgary-construction-cost.onrender.com/)
 
----
+------------------------------------------------------------------------
 
-## **Tools & Technologies**
-- **Power BI** (DAX, bookmarks, slicers, map visuals)
-- **Python** (Pandas, Scikit‑learn, XGBoost)
-- **Excel** (data audit & export)
+## 📁 Project Structure
 
----
+- **Data Cleaning & Preparation** — Missing value treatment, transformation, and outlier handling.
+- **EDA & Visualization** — Community-wise investment, housing trends, and work class costs.
+- **Modeling** — XGBoost regression with stratified K-Fold validation.
+- **Deployment** — Streamlit for app interface; Power BI for executive dashboards.
 
-## **Insights**
-- After cleaning, **378K permits** analyzed; **Residential Improvements** dominate with **183K permits**.
-- **XGBoost** achieved **R² = 0.85** and **RMSE ≈ $45K**, showing strong prediction accuracy.
-- Commercial/Multi-Family projects have higher errors; specialized models could improve estimates.
-- Large missing **TotalSqFt** imputed; better data capture needed at application stage.
-- **Downtown** leads with **$8.8B** in permits; **Cornerstone** and **Livingston** are fast-growing communities.
-- **Single Family permits** lead in cost and count; 2024 had the highest permit volume.
+------------------------------------------------------------------------
 
----
+## 🧰 Technologies Used
 
-## **Recommendations**
-- Build tailored models for commercial/multi-family permits.
-- Improve TotalSqFt data collection at application stage.
-- Focus planning on high-growth communities like Cornerstone.
+- Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, XGBoost)
+- Power BI
+- Streamlit
+- Jupyter Notebook
+
+------------------------------------------------------------------------
+
+## 🚀 How to Run
+
+1. Clone this repository
+
+2. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run the notebook:  
+    `Calgary_Building_Permits_Structured.ipynb`
+
+4. Or launch the app via:
+
+    ```bash
+    streamlit run app.py
+    ```
+
+------------------------------------------------------------------------
+
+## 📂 Dataset Link
+
+Download the dataset used in this project here:
+
+👉 [Calgary Building Permits Dataset](https://drive.google.com/file/d/1M5IdvBmQcyTRPlydp2t89Q75hRaEoJrS/view?usp=sharing)
+
+------------------------------------------------------------------------
+
+## 📬 Contact
+
+For questions or feedback, feel free to reach out via  
+[LinkedIn](https://www.linkedin.com/in/dr-sudeshna-kundu-mondal-3135a142/)
+
+------------------------------------------------------------------------
