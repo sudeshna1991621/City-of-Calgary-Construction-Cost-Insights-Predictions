@@ -35,7 +35,7 @@ Interact with the ML-based project cost estimator and explore Calgary's construc
 
 - **Data Cleaning & Preparation** — Missing value treatment, transformation, and outlier handling.
 - **EDA & Visualization** — Community-wise investment, housing trends, and work class costs.
-- **Modeling** — XGBoost regression with stratified K-Fold validation.
+- **Modeling** — XGBoost regression with stratified modeling.
 - **Deployment** — Streamlit for app interface; Power BI for executive dashboards.
 
 ------------------------------------------------------------------------
